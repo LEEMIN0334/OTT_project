@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.memberInfoMapper">
+  <!-- ResultMap 정의 -->
+  <resultMap id="UsersDTO" type="dto.UsersDTO">
+    <id property="memberNum" column="memberNum"/>
+    <result property="id" column="id"/>
+    <result property="name" column="name"/>
+    <result property="email" column="email"/>
+    <result property="birth" column="birth"/>
+    <result property="password" column="password"/>
+  </resultMap>
+
+  <!-- 사용자 조회 쿼리 -->
+  <select id="selectUserById" parameterType="String" resultType="dto.UsersDTO">
+    SELECT memberNum, id, name, email, birth, password
+    FROM Users
+    WHERE id = #{id}
+  </select>
+
+  <!-- 사용자 삽입 쿼리 -->
+  <insert id="insertMember" parameterType="dto.UsersDTO">
+    INSERT INTO Users (memberNum, id, password, name, email, birth)
+    VALUES (
+      'A' || LPAD((SELECT NVL(MAX(TO_NUMBER(SUBSTR(memberNum, 2))), 0) + 1 FROM Users), 5, '0'),
+      #{id},
+      standard_hash(#{password}, 'SHA512'),
+      #{name},
+      #{email},
+      TO_DATE(#{birth}, 'YYYYMMDD')
+    )
+  </insert>
+</mapper>
