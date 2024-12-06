@@ -36,9 +36,7 @@ public class WritePostServlet extends HttpServlet {
 
         int count = mapper.insertPost(dto);
         System.out.println("데이터 등록 결과 : " + count);
-        List<PostDTO> postList = mapper.getAllPosts(dto);
-		
-        request.setAttribute("postList", postList);
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("/GetAllPostServlet");
         dispatcher.forward(request, response);
 	}

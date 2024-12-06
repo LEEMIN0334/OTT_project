@@ -9,6 +9,7 @@
     <insert id="insertPost" parameterType="dto.PostDTO">
         INSERT INTO Post (POSTNUM, MEMBERNUM, POSTEDDATE, TITLE, CONTENT,COMENTNUM,GNO,POSTTYPE)
         VALUES (post_seq.nextVal, 'A010', SYSDATE, #{title},#{content},100,'A','50')
+       /* 'A010'은고정값을 달아놈 회원가입멤버값을 넣으면 됨  */
     </insert>
 
     <!-- 게시글 목록 조회 -->
