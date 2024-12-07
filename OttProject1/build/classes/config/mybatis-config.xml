@@ -16,6 +16,6 @@
   </environments>
   <mappers>
     <mapper resource="config/member.xml"/>
-    
+    <mapper resource="config/group.xml"/>
   </mappers>
 </configuration>

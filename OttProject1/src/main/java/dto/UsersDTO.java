@@ -1,7 +1,7 @@
 package dto;
 
 public class UsersDTO {
-    private String memberNum;
+    private String memberNum;  // 회원번호 추가
     private String id;
     private String name;
     private String email;
@@ -54,11 +54,5 @@ public class UsersDTO {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    @Override
-    public String toString() {
-        return "UsersDTO [memberNum=" + memberNum + ", id=" + id + ", name=" + name + ", email=" + email + ", birth="
-                + birth + ", password=" + password + "]";
     }
 }

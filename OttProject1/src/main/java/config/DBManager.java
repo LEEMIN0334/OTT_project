@@ -13,20 +13,16 @@ public class DBManager {
     private SqlSessionFactory sqlSessionFactory;
 
     private DBManager() {
-        String resource = "config/mybatis-config.xml";
-        InputStream inputStream;
         try {
-            inputStream = Resources.getResourceAsStream(resource);
+            InputStream inputStream = Resources.getResourceAsStream("config/mybatis-config.xml");
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-            System.out.println("DB 셋팅 완료");
         } catch (IOException e) {
             e.printStackTrace();
+            throw new RuntimeException("MyBatis 설정 파일 로드 실패: " + e.getMessage());
         }
     }
 
     public static DBManager getInstance() {
-        if (instance == null)
-            instance = new DBManager();
         return instance;
     }
 
@@ -34,4 +30,3 @@ public class DBManager {
         return sqlSessionFactory.openSession(true);
     }
 }
-

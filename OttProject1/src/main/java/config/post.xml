@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.postMapper">
+  <resultMap id="post" type="dto.PostDTO">
+    <id property="postnum" column="postnum"/>
+    <result property="membernum" column="membernum"/>
+    <result property="posteddate" column="posteddate"/>
+    <result property="posteddata" column="posteddata"/>
+    <result property="password" column="password"/>
+    <result property="view1" column="view1"/>
+  </resultMap>
+  
+  <insert id="insertPost" parameterType="dto.PostDTO">
+    INSERT INTO post (postnum, membernum, posteddata)
+    VALUES (
+      #{postnum},
+      #{membernum},
+      #{posteddata}
+    )
+  </insert>
+</mapper>

@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<ul>
-		<li><a href="./member_insert_view.jsp">회원가입</a></li>
-	</ul>
+	<!-- 그룹 리스트 만들기,  -->
 </body>
 </html>

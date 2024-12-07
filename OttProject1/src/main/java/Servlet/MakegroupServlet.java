@@ -8,19 +8,18 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
-import java.lang.annotation.Repeatable;
 
 /**
- * Servlet implementation class LogoutServlet
+ * Servlet implementation class createGroup
  */
-@WebServlet("/logout.do")
-public class LogoutServlet extends HttpServlet {
+@WebServlet("/makegroup.do")
+public class MakegroupServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LogoutServlet() {
+    public MakegroupServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,10 +28,18 @@ public class LogoutServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getSession().invalidate();
+		HttpSession session = request.getSession(false);
+		response.setContentType("text/html;charset=UTF-8");
 		
-		// 페이지 이동
-		response.sendRedirect("login.jsp");
+		if (session == null || session.getAttribute("user") == null) {
+			response.getWriter().write(
+				"<script>" +
+				"alert('로그인이 필요한 서비스 입니다.');" +
+				"window.location.href='insertGroup.jsp';" + // 로그인 페이지로 이동
+				"</script>"
+			);
+		}
+		response.sendRedirect("insertGroup.jsp");
 	}
 
 	/**

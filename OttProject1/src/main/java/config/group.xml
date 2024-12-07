@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.grouptableMapper">
+  <resultMap id="grouptable" type="dto.GroupTableDTO">
+    <id property="gno" column="gno"/>
+    <result property="groupname" column="group_name"/>
+    <result property="ottservice" column="ott_service"/>
+    <result property="paynum" column="paynum"/>
+    <result property="ottaccount" column="ottaccount"/>
+  </resultMap>
+  
+  <insert id="insertGroupTable" parameterType="dto.GroupTableDTO">
+    INSERT INTO grouptable (gno, group_name, ott_service, paynum, ottaccount)
+    VALUES (
+      #{gno},
+      #{groupname},
+      #{ottservice},
+      #{paynum},
+      #{ottaccount}
+    )
+  </insert>
+</mapper>
