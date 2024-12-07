@@ -5,7 +5,11 @@
 다음 코드를 실행한다
 
 git init
+
 git config user.name 이름
+
 git config user.email 이메일
+
 git remote add 원격저장소구분별칭  리포지토리 주소
+
 git pull 원격저장소구분별칭 받고자하는브런치이름
