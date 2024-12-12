@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.UsersMapper">
+  	<select id="findIdAndPassword" parameterType = "map" resultType = "dto.UsersDTO">
+  		select * from Users
+  		where id like #{id} and password like STANDARD_HASH(#{password}, 'SHA512')
+  	</select>
+  	
+  	<resultMap id="UsersDTO" type="dto.UsersDTO">
+    <id property="id" column="id" />
+    <result property="password" column="password" />
+    <result property="name" column="name" />
+    <result property="email" column="email" />
+    <result property="birth" column="birth" />
+    <result property="account" column="account" />
+</resultMap>
+
+
+	<update id="updateUserInfo" parameterType="dto.UsersDTO">
+    UPDATE Users
+    <set>
+        <if test="name != null">name = #{name},</if>
+        <if test="email != null">email = #{email},</if>
+        <if test="birth != null">birth = #{birth},</if>
+        account = #{account},
+        password = standard_hash(#{password}, 'SHA512')
+    </set>
+    WHERE id = #{id}
+</update>
+
+
+
+	<delete id="deleteUser" parameterType="string">
+   		 DELETE FROM Users WHERE id = #{id, jdbcType=VARCHAR}
+	</delete>
+	
+
+	<select id="selectUserById" parameterType="string"
+		resultMap="UsersDTO">
+		SELECT * FROM Users WHERE id = #{id}
+	</select>
+	
+</mapper>

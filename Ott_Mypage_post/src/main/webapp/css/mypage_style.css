@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	background: #F5F5F5;
+	color: #333;
+}
+
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #fff;
+	padding: 20px 40px;
+	border-bottom: 1px solid #ddd;
+}
+
+.header .title {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.header .user-info {
+	font-size: 16px;
+}
+
+.main-content {
+	display: flex;
+	justify-content: space-between;
+	background: #fff;
+	padding: 40px;
+	margin-top: 20px;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section {
+	width: 40%;
+	text-align: center;
+	border-right: 1px solid #ddd;
+	padding-right: 20px;
+}
+
+.profile-section img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin-bottom: 10px;
+}
+
+.profile-section h2 {
+	margin: 10px 0;
+	font-size: 20px;
+}
+
+.ott-sharing p {
+	display: inline-block;
+	width: 60%;
+	margin: 15px 5px;
+	padding: 10px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	background: #FFFFFF;
+	border: 1px solid #6B7280;
+	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+}
+
+/* 	#payment {
+		background-color: #FEE500;
+		width: 100px;
+		height: 40px;
+		padding: 10px;
+		border-radius: 5px;
+		text-decoration: none;
+		color: 	#191919;
+		font-weight: bold;
+	} */
+.form-section {
+	width: 55%;
+	padding-left: 20px;
+}
+
+.form-section label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.form-section input {
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+
+.form-section .actions {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.form-section .actions a {
+	color: red;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.form-section .actions button {
+	width: 150px;
+	height: 50px;
+	background: #007BFF;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.form-section .actions button:hover {
+	background: #0056b3;
+}
+
+.footer {
+	text-align: center;
+	margin-top: 20px;
+	padding: 20px;
+	background: #fff;
+	border-top: 1px solid #ddd;
+}
+
+.footer p {
+	margin: 0;
+	font-size: 12px;
+	color: #888;
+}
+
+.footer .social-links {
+	margin-top: 10px;
+}
+
+.footer .social-links img {
+	width: 30px;
+	height: 30px;
+	margin: 0 5px;
+}

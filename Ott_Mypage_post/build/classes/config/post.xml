@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.PostMapper">
+    
+    <!-- 게시글 삽입 -->
+    <insert id="insertPost" parameterType="dto.PostDTO">
+        INSERT INTO POST (POSTNUM, PLATFORMNUM, ID, POSTDATE, POSTDATA)
+        VALUES (post_seq.nextVal, #{platformNum}, #{id}, SYSDATE,#{content})
+    </insert>
+
+
+	<select id="getPostlist" resultType="dto.PostDTO">
+		
+		SELECT 
+			 A.POSTNUM 
+			,A.PLATFORMNUM 
+			,A.ID 
+			,A.POSTDATE 
+			,A.POSTDATA 
+			,NVL(B.SHARENUM,0) || '/4' AS  SHARENUM
+		FROM POST A
+		INNER JOIN OTT_SERVICE B 
+		ON A.PLATFORMNUM = B.PLATFORMNUM
+		
+	</select>
+
+	<select id="getPostItem" resultType="dto.PostDTO">
+		
+		SELECT 
+			 PLATFORMNUM
+		FROM OTT_SERVICE
+	</select>
+  
+</mapper>
