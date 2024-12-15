@@ -12,7 +12,7 @@
     </insert>
 
 
-	<select id="getPostlist" resultType="dto.PostDTO">
+	<select id="getPostlist" resultType="dto.PostDTO" parameterType="dto.PostDTO">
 		
 		SELECT 
 			 A.POSTNUM 
@@ -24,7 +24,10 @@
 		FROM POST A
 		INNER JOIN OTT_SERVICE B 
 		ON A.PLATFORMNUM = B.PLATFORMNUM
-		
+		WHERE 1=1
+		<if test="platformNum != null and platformNum != ''">
+    		AND A.PLATFORMNUM = #{platformNum}
+  		</if>		
 	</select>
 
 	<select id="getPostItem" resultType="dto.PostDTO">
@@ -33,5 +36,9 @@
 			 PLATFORMNUM
 		FROM OTT_SERVICE
 	</select>
+	
+	<delete id="deletePost" parameterType="dto.PostDTO">
+		DELETE FROM POST WHERE POSTNUM = #{postNum}
+	</delete>
   
 </mapper>

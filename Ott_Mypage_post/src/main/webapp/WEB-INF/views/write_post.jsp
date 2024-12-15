@@ -140,12 +140,12 @@
 </head>
 <body>
     <header>
-        <div class="logo">logo</div>
+        <div class="logo"><a href="./Main.do">logo</a></div>
         <nav>
-            <a href="write_post.jsp">글 작성하기</a>
-            <a href="post_list.jsp">공유글 보기</a>
+            <a href="./write_post_view.do">글 작성하기</a>
+            <a href="./list_post.do">공유글 보기</a>
             <a href="#">요금 가이드</a>
-            <a href="#">마이페이지</a>
+            <a href="./mypage_view.do">마이페이지</a>
         </nav>
     </header>
     <main>

@@ -140,7 +140,7 @@
 </head>
 <body>
     <header>
-        <div class="logo">logo</div>
+         <div class="logo"><a href="./Main.do">logo</a></div>
         <nav>
             <a href="./write_post_view.do">글 작성하기</a>
             <a href="./list_post.do">공유글 보기</a>
@@ -155,7 +155,29 @@
 
     <main>
         <div class="title-section">
-            <h1>넷플릭스 공유하기</h1>
+        	<c:choose>
+	        	<c:when test="${platformNum eq 'Netflix' }">
+	        		<h1>넷플릭스 공유하기</h1>
+	        	</c:when>
+	        	<c:when test="${platformNum eq 'Disneyplus' }">
+					<h1>디즈니+ 공유하기</h1>
+				</c:when>
+				<c:when test="${platformNum eq 'YouTube' }">
+					<h1>유투브 프리미엄 공유하기</h1>
+				</c:when>
+				<c:when test="${platformNum eq 'Coupang' }">
+					<h1>쿠팡 플레이 공유하기</h1>
+				</c:when>
+				<c:when test="${platformNum eq 'Wavve' }">
+					<h1>웨이브 공유하기</h1>
+				</c:when>
+				<c:when test="${platformNum eq 'Tving' }">
+					<h1>티빙 공유하기</h1>
+				</c:when>
+				<c:otherwise>
+	        		<h1>전체 리스트</h1>
+	        	</c:otherwise>
+        	</c:choose>
             <button  onclick="location.href='./write_post_view.do'">글 작성하기</button>
         </div>
 
@@ -166,6 +188,7 @@
                     <th>제목</th>
                     <th>작성일</th>
                     <th>모집 상태</th>
+                    <th>삭제버튼</th>
                 </tr>
             </thead>
             <tbody>
@@ -176,6 +199,7 @@
 	                    <td>${postList.postData}(제목대신 내용으로)</td>
 	                    <td>${postList.postDate}</td>
 	                    <td class="recruiting">모집중 ${postList.shareNum}</td>
+	                    <td class="recruiting"><button  onclick="location.href='./delete_post.do?postNum=${postList.postNum}&platformNum=${platformNum }'">삭제</button></td>
 	                </tr>
                 </c:forEach>
             </tbody>

@@ -33,7 +33,12 @@ public class PostService {
 		return postMapper.getPostItem();
 	}
 	
-	public List<PostDTO> getPostlist() {
-		return postMapper.getPostlist();
+	public List<PostDTO> getPostlist(PostDTO postDTO) {
+		return postMapper.getPostlist(postDTO);
 	}
+	
+	public int deletePost(PostDTO postDto) {
+		return postMapper.deletePost(postDto);
+	}
+
 }

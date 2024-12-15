@@ -9,5 +9,6 @@ public interface PostMapper {
 
 	int insertPost(PostDTO dto);
 	List<PostDTO> getPostItem();
-	List<PostDTO> getPostlist();
+	List<PostDTO> getPostlist(PostDTO postDTO);
+	int deletePost(PostDTO dto);
 }

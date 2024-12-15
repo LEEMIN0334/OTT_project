@@ -43,6 +43,9 @@ public class HandlerMapping {
 			break;
 		case "list_post": 
 			controller = new listPostController();
+			break;
+		case "delete_post": 
+			controller = new DeletePostController();
 			break;			
 		case "mypage_view":
 			controller = new MypageController();

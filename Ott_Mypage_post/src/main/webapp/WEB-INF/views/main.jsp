@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <div class="logo">logo</div>
+        <div class="logo"><a href="./Main.do">logo</a></div>
         <nav>
             <a href="./write_post_view.do">글 작성하기</a>
             <a href="./list_post.do">공유글 보기</a>
@@ -26,41 +26,55 @@
     <main>
         <h1>OTT 공유하기</h1>
         <div class="container">
+
             <div class="card">
-                <img class="logo" src="netflix-logo.png" alt="넷플릭스">
-                <h2>넷플릭스 공유하기</h2>
-                <p>넷플릭스 계정을 함께 사용하고 절약하세요!</p>
-                <button>참여하기 &gt;</button>
+            	<a href="./list_post.do?platformNum=Netflix">
+	                <img class="logo" src="netflix-logo.png" alt="넷플릭스">
+	                <h2>넷플릭스 공유하기</h2>
+	                <p>넷플릭스 계정을 함께 사용하고 절약하세요!</p>
+	                <button>참여하기 &gt;</button>
+                </a>
+            </div>
+
+            <div class="card">
+            	<a href="./list_post.do?platformNum=Disneyplus">
+	                <img class="logo" src="disney-logo.png" alt="디즈니+">
+	                <h2>디즈니+ 공유하기</h2>
+	                <p>디즈니+ 콘텐츠를 함께 즐기세요!</p>
+	                <button>참여하기 &gt;</button>
+                </a>
             </div>
             <div class="card">
-                <img class="logo" src="disney-logo.png" alt="디즈니+">
-                <h2>디즈니+ 공유하기</h2>
-                <p>디즈니+ 콘텐츠를 함께 즐기세요!</p>
-                <button>참여하기 &gt;</button>
+            	<a href="./list_post.do?platformNum=YouTube">
+	                <img class="logo" src="youtube-logo.png" alt="유튜브">
+	                <h2>유튜브 프리미엄 공유하기</h2>
+	                <p>광고 없는 유튜브를 함께 즐겨보세요.</p>
+	                <button>참여하기 &gt;</button>
+	            </a>
             </div>
             <div class="card">
-                <img class="logo" src="youtube-logo.png" alt="유튜브">
-                <h2>유튜브 프리미엄 공유하기</h2>
-                <p>광고 없는 유튜브를 함께 즐겨보세요.</p>
-                <button>참여하기 &gt;</button>
+            	<a href="./list_post.do?platformNum=Coupang">
+	                <img class="logo" src="coupang-logo.png" alt="쿠팡">
+	                <h2>쿠팡 플레이 공유하기</h2>
+	                <p>쿠팡 플레이로 더 많은 콘텐츠를 경험하세요.</p>
+	                <button>참여하기 &gt;</button>
+                </a>
             </div>
             <div class="card">
-                <img class="logo" src="coupang-logo.png" alt="쿠팡">
-                <h2>쿠팡 플레이 공유하기</h2>
-                <p>쿠팡 플레이로 더 많은 콘텐츠를 경험하세요.</p>
-                <button>참여하기 &gt;</button>
+            	<a href="./list_post.do?platformNum=Wavve">
+	                <img class="logo" src="wavve-logo.png" alt="웨이브">
+	                <h2>웨이브 공유하기</h2>
+	                <p>국내 인기 콘텐츠를 함께 즐겨요.</p>
+	                <button>참여하기 &gt;</button>
+                </a>
             </div>
             <div class="card">
-                <img class="logo" src="wavve-logo.png" alt="웨이브">
-                <h2>웨이브 공유하기</h2>
-                <p>국내 인기 콘텐츠를 함께 즐겨요.</p>
-                <button>참여하기 &gt;</button>
-            </div>
-            <div class="card">
-                <img class="logo" src="tving-logo.png" alt="티빙">
-                <h2>티빙 공유하기</h2>
-                <p>티빙 오리지널 시리즈를 함께 감상하세요.</p>
-                <button>참여하기 &gt;</button>
+            	<a href="./list_post.do?platformNum=Tving">
+	                <img class="logo" src="tving-logo.png" alt="티빙">
+	                <h2>티빙 공유하기</h2>
+	                <p>티빙 오리지널 시리즈를 함께 감상하세요.</p>
+	                <button>참여하기 &gt;</button>
+                </a>
             </div>
         </div>
     </main>

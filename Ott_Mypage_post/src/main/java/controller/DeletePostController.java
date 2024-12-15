@@ -1,7 +1,7 @@
 package controller;
 
 import java.io.IOException;
-
+import java.util.List;
 
 
 import dto.PostDTO;
@@ -14,7 +14,7 @@ import service.PostService;
 import service.UserService;
 import view.ModelAndView;
 
-public class writePostController implements Controller{
+public class DeletePostController implements Controller{
 
 	@Override
 	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response)
@@ -22,6 +22,9 @@ public class writePostController implements Controller{
         UsersDTO sessionUser = (UsersDTO) request.getSession().getAttribute("user");
 
         UsersDTO updatedUser = UserService.getInstance().selectUserById(sessionUser.getId());
+
+        String platformNum = request.getParameter("platformNum");
+        String postNum = request.getParameter("postNum");
         
         if (updatedUser != null) {
             request.getSession().setAttribute("user", updatedUser);
@@ -29,28 +32,23 @@ public class writePostController implements Controller{
             response.getWriter().write("<script>alert('사용자 정보를 불러올 수 없습니다. 다시 로그인해주세요.'); location.href='login.jsp';</script>");
             return null;
         }
-        
-        PostDTO postDto=new PostDTO();
-        
-		String title = request.getParameter("title");
-		String content = request.getParameter("content");
-		String platformNum = request.getParameter("platformNum");
-		
-		
-		 postDto.setId(updatedUser.getId());
-		 postDto.setTitle(title);
-		 postDto.setContent(content);
-		 postDto.setPlatformNum(platformNum);
 
-        int postItem = PostService.getInstance().insertPost(postDto);
+        PostDTO postDTO = new PostDTO();
         
-        System.out.println("성공여부 -> "+postItem);
+        postDTO.setPlatformNum(platformNum);
+       
+        postDTO.setPostNum(postNum);
         
+        PostService.getInstance().deletePost(postDTO);
+        
+		List<PostDTO> postList = PostService.getInstance().getPostlist(postDTO);
+    
         // ModelAndView 설정
         ModelAndView view = new ModelAndView();
-        
-		view.setPath("./Main.do");	
-		view.setRedirect(true);
+        view.addObject("postList", postList);
+        view.addObject("platformNum", platformNum);
+        view.setPath("list_post.jsp"); // JSP 경로
+        view.setRedirect(false);   // forward 방식
         return view;
 	}
 

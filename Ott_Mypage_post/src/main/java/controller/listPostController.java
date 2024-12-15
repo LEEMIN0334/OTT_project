@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import java.util.List;
 
+import org.apache.tomcat.jakartaee.commons.lang3.StringUtils;
 
 import dto.PostDTO;
 import dto.UsersDTO;
@@ -23,7 +24,7 @@ public class listPostController implements Controller{
 
         UsersDTO updatedUser = UserService.getInstance().selectUserById(sessionUser.getId());
 
-    
+        String platformNum = request.getParameter("platformNum");
         
         if (updatedUser != null) {
             request.getSession().setAttribute("user", updatedUser);
@@ -32,12 +33,18 @@ public class listPostController implements Controller{
             return null;
         }
 
+        PostDTO postDTO = new PostDTO();
         
-		List<PostDTO> postList = PostService.getInstance().getPostlist();
+        if(!StringUtils.isEmpty(platformNum)) {
+        	postDTO.setPlatformNum(platformNum);
+        }
+        
+		List<PostDTO> postList = PostService.getInstance().getPostlist(postDTO);
     
         // ModelAndView 설정
         ModelAndView view = new ModelAndView();
         view.addObject("postList", postList);
+        view.addObject("platformNum", platformNum);
         view.setPath("list_post.jsp"); // JSP 경로
         view.setRedirect(false);   // forward 방식
         return view;
