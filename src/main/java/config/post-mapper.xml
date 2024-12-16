@@ -28,7 +28,11 @@
  	<select id="getPostList" resultType="dto.PostDTO">
  		select * from POST_VIEW
  	</select>
+<<<<<<< HEAD
  	<select id="searchpostnum" parameterType="String" resultType="dto.PostDTO">
+=======
+ 	<select id="searchpostnum" parameterType="int" resultType="dto.PostDTO">
+>>>>>>> 775632f93c79b58f7c1ef567c31a349f253d65aa
  		select * from POST_VIEW where postnum = #{postnum}
  	</select>
 </mapper>

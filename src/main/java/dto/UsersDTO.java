@@ -6,8 +6,12 @@ public class UsersDTO {
 	private String email;
 	private String birth;
 	private String password;
+<<<<<<< HEAD
 	private String account;
 	
+=======
+	private String Account;
+>>>>>>> 775632f93c79b58f7c1ef567c31a349f253d65aa
 	
 	public UsersDTO() { }
 	
@@ -18,7 +22,11 @@ public class UsersDTO {
 		this.email = email;
 		this.birth = birth;
 		this.password = password;
+<<<<<<< HEAD
 		this.account = account;
+=======
+		Account = account;
+>>>>>>> 775632f93c79b58f7c1ef567c31a349f253d65aa
 	}
 	public String getId() {
 		return id;
@@ -50,6 +58,7 @@ public class UsersDTO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+<<<<<<< HEAD
 	
 	public String getAccount() {
 	    return account;
@@ -59,6 +68,14 @@ public class UsersDTO {
 	    this.account = account;
 	}
 
+=======
+	public String getAccount() {
+		return Account;
+	}
+	public void setAccount(String account) {
+		Account = account;
+	}
+>>>>>>> 775632f93c79b58f7c1ef567c31a349f253d65aa
 	
 	
 }

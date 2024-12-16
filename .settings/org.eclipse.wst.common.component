@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+<<<<<<< HEAD
     <wb-module deploy-name="Ott_Mypage20241213">
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <property name="context-root" value="Ott_Mypage20241213"/>
         <property name="java-output-path" value="/Ott_Mypage20241213/build/classes"/>
+=======
+    <wb-module deploy-name="Ott_Controller">
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <property name="context-root" value="Ott_Controller"/>
+        <property name="java-output-path" value="/Ott_Controller/build/classes"/>
+>>>>>>> 775632f93c79b58f7c1ef567c31a349f253d65aa
     </wb-module>
 </project-modules>

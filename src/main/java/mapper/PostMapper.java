@@ -14,6 +14,10 @@ public interface PostMapper {
 
 	List<PostDTO> getPostList();
 
+<<<<<<< HEAD
 	PostDTO searchpostnum(String postnum);
+=======
+	PostDTO searchpostnum(int postnum);
+>>>>>>> 775632f93c79b58f7c1ef567c31a349f253d65aa
 	
 }

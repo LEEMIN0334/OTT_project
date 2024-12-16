@@ -44,7 +44,11 @@ public class PostService {
 	}
 
 
+<<<<<<< HEAD
 	public PostDTO searchpostnum(String postnum) {
+=======
+	public PostDTO searchpostnum(int postnum) {
+>>>>>>> 775632f93c79b58f7c1ef567c31a349f253d65aa
 		try(SqlSession session = DBManager.getInstance().getSession()){
 			PostMapper mapper = session.getMapper(PostMapper.class);
 			return mapper.searchpostnum(postnum);

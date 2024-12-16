@@ -17,5 +17,9 @@ public class LoginViewController implements Controller {
 		view.setPath("login.jsp");
 		return view;
 	}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 775632f93c79b58f7c1ef567c31a349f253d65aa
 }

@@ -22,13 +22,21 @@ public class LoginController implements Controller {
 		ModelAndView view = new ModelAndView();
 		if(dto != null) {
 			request.getSession().setAttribute("user", dto);
+<<<<<<< HEAD
 			System.out.println(((UsersDTO)request.getSession().getAttribute("user")).getId());
 			view.setPath("./Main.do");	
+=======
+			view.setPath("./ottMain.do");	
+>>>>>>> 775632f93c79b58f7c1ef567c31a349f253d65aa
 			view.setRedirect(true);
 		}else {
 			view.setPath("login.jsp");
 		}
 		return view;
 	}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 775632f93c79b58f7c1ef567c31a349f253d65aa
 }

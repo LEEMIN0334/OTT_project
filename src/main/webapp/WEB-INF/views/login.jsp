@@ -22,7 +22,11 @@
             <button type="submit" class="login-button">로그인</button>
         </form>
         <div class="register-link">
+<<<<<<< HEAD
             <p>아직 계정이 없으신가요? <a href="./registerView.do">회원가입</a></p>
+=======
+            <p>아직 계정이 없으신가요? <a href="">회원가입</a></p>
+>>>>>>> 775632f93c79b58f7c1ef567c31a349f253d65aa
         </div>
     </div>
 </body>

@@ -31,17 +31,25 @@ public class InsertGroupAndPostController implements Controller {
 		seconds -= 1000000000;
 		
 		int postnum = seconds;// postnum은 
+<<<<<<< HEAD
 		String a = postnum + "";
 		a += "";
 		
 		PostDTO dto = new PostDTO();
 		
 		dto.setPostnum(a);
+=======
+		
+		PostDTO dto = new PostDTO();
+		
+		dto.setPostnum(postnum);
+>>>>>>> 775632f93c79b58f7c1ef567c31a349f253d65aa
 		dto.setId(id);
 		dto.setPlatformnum(platformnum);
 		dto.setPostdata(postdata);
 		dto.setOttid(ottid);
 		dto.setOttpassword(ottpassword);
+<<<<<<< HEAD
 		try {
 			int count = PostService.getInstance().insertGroup(dto);
 			count = PostService.getInstance().insertPost(dto);
@@ -64,6 +72,26 @@ public class InsertGroupAndPostController implements Controller {
 		
 		
 		
+=======
+		System.out.println(postnum+ " "+platformnum+" "+postdata+" "+ottid+" "+ottpassword);
+		
+		int count = 0;
+		
+		while (count != 1) {
+			count = PostService.getInstance().insertPost(dto);
+		}
+		
+		count = PostService.getInstance().insertGroup(dto);
+		
+		count = PostService.getInstance().insertGroupMember(dto);
+//		
+		
+		
+		ModelAndView view = new ModelAndView();
+		view.setRedirect(false);   // forward 방식
+        view.setPath("insertpost.jsp"); // JSP 경로
+        return view;
+>>>>>>> 775632f93c79b58f7c1ef567c31a349f253d65aa
 	}
 
 }

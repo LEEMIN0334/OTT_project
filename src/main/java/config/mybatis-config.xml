@@ -16,7 +16,10 @@
   </environments>
   <mappers>
     <mapper resource="config/Users-mapper.xml"/>
+<<<<<<< HEAD
     <mapper resource="config/groupmember.xml"/>
+=======
+>>>>>>> 775632f93c79b58f7c1ef567c31a349f253d65aa
     <mapper resource="config/post-mapper.xml"/>
   </mappers>
 </configuration>
