@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.PostMapper">
+	<resultMap id="PostDTO" type="dto.PostDTO">
+		<id  column="postnum" property="postnum" />
+		<result column="postdata" property="postdata"/>
+		<result column="id" property="id"/>
+		<result column="sharenum" property="sharenum"/>
+		<result column="nownum" property="nownum"/>
+		<result column="ottid" property="ottid"/>
+		<result column="ottpasswrod" property="ottpasswrod"/>
+		<result column="postdate" property="postdate"/>
+	</resultMap>
+	<insert id="insertPost" parameterType="dto.PostDTO">
+ 		insert into post(postnum, platformnum, id, postdate, postdata)
+ 		values(#{postnum},#{platformnum},#{id},sysdate,#{postdata})
+ 	</insert>
+ 	<insert id="insertGroup" parameterType="dto.PostDTO">
+ 		insert into groups(gno, platformnum, ott_id, ott_password)
+ 		values(#{postnum},#{platformnum},#{ottid},#{ottpassword})
+ 	</insert>
+ 	<insert id="insertGroupMember" parameterType="dto.PostDTO">
+ 		insert into group_member(gno, platformnum, id)
+ 		values(#{postnum},#{platformnum},#{id})
+ 	</insert>
+ 	<select id="getPostList" resultType="dto.PostDTO">
+ 		select * from POST_VIEW
+ 	</select>
+ 	<select id="searchpostnum" parameterType="String" resultType="dto.PostDTO">
+ 		select * from POST_VIEW where postnum = #{postnum}
+ 	</select>
+</mapper>
+
+
+<!--  -->

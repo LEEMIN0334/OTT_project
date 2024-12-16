@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+
+.guide-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.card {
+    background-color: #FFFFFF;
+    width: 350px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.card a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card a:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-top: 50px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+footer a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000000;
+}
+
+#logo {
+    display: block;
+    width: 128px;
+    height: 25px;
+    background-image: url('../img/logo_black.png'); /* 수정된 경로 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+#logo:hover {
+    background-image: url('../img/logo1.png'); /* 수정된 경로 */
+}
