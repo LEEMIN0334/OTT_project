@@ -199,7 +199,15 @@
 	                    <td>${postList.postData}(제목대신 내용으로)</td>
 	                    <td>${postList.postDate}</td>
 	                    <td class="recruiting">모집중 ${postList.shareNum}</td>
-	                    <td class="recruiting"><button  onclick="location.href='./delete_post.do?postNum=${postList.postNum}&platformNum=${platformNum }'">삭제</button></td>
+	                    <c:choose>
+	                    	<c:when test="${user.id eq postList.id}">
+	                    		<td class="recruiting"><button  onclick="location.href='./delete_post.do?postNum=${postList.postNum}&platformNum=${platformNum }'">삭제</button></td>
+	                    	</c:when>
+	                    	<c:otherwise>
+	                    		<td class="recruiting">삭제불가</td>
+	                    	</c:otherwise>
+	                    </c:choose>
+	                    
 	                </tr>
                 </c:forEach>
             </tbody>
