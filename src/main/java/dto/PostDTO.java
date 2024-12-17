@@ -1,11 +1,7 @@
 package dto;
 
 public class PostDTO {
-<<<<<<< HEAD
 	private String postnum;
-=======
-	private int postnum;
->>>>>>> 775632f93c79b58f7c1ef567c31a349f253d65aa
 	private String id;
 	private String platformnum;
 	private String postdate;
@@ -18,20 +14,11 @@ public class PostDTO {
 
 	public PostDTO() {
 	}
-
-<<<<<<< HEAD
 	public String getPostnum() {
 		return postnum;
 	}
 
 	public String setPostnum(String postnum) {
-=======
-	public int getPostnum() {
-		return postnum;
-	}
-
-	public int setPostnum(int postnum) {
->>>>>>> 775632f93c79b58f7c1ef567c31a349f253d65aa
 		return this.postnum = postnum;
 	}
 
